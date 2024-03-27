@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
-import { hightlightsSlides } from '../constants'
-import {useState, useRef, scrollTrigger} from 'react'
+
+import { hightlightsSlides } from '../constants';
+import React, {useState, useRef, useEffect} from 'react';
+import {gsap, scrollTrigger} from 'gsap';
 
 const VideoCarousel = () => {
     const videoRef = useRef([]);
@@ -32,7 +33,7 @@ const VideoCarousel = () => {
             }
          })
       })
-    }, [isEnd, videoId]);
+    }; [isEnd, videoId];
 
 
   useEffect(() => {
@@ -46,8 +47,7 @@ const VideoCarousel = () => {
   }, [startPlay, videoId, isPlaying, loadedData])
   
 
-  const handleLoadedMetadata = (i,e) => setLoadedData
-   ((pre)) => [...pre, e])
+  const handleLoadedMetadata = (i,e) => setLoadedData((pre) => [...pre, e])
 
 
   useEffect(() => {
@@ -92,8 +92,8 @@ const VideoCarousel = () => {
 
 
 
-  return (
-    <>
+      return (
+      <>
     <div className='flex items-center'>
         {hightlightsSlides.map((list,i)=> (
             <div key = {list.id} id = "slider" className = "sm:pr-20 pr-10">
@@ -162,6 +162,6 @@ const VideoCarousel = () => {
     </div>
     </>
   )
-}
 
+    }
 export default VideoCarousel
