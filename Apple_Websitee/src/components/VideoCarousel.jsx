@@ -148,8 +148,8 @@ const VideoCarousel = () => {
             alt = {isLastVideo ? 'replay' : !isPlaying ? 'play' :'pause'}
             onClick = {isLastVideo ? () => handleProcess('video-reset')
             : !isPlaying
-            ? () => handleProcess('play')  //ako DA -> play
-            : () => handleProcess('pause') //ako NE -> pause
+            ? () => handleProcess('play')  //ako DA -> play (if)
+            : () => handleProcess('pause') //ako NE -> pause (else)
             
             
 
