@@ -33,7 +33,7 @@ const VideoCarousel = () => {
             }
          })
       })
-    }; [isEnd, videoId];
+    }, [isEnd, videoId];
 
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const VideoCarousel = () => {
 
     if(span[videoId]){
         // ako imame spana na nqkoe Id na viewporta- da se puska animaciqta mu
-        //animkate the progress of the video
+        //animate the progress of the video
         let anim = gsap.to(span[video], {
             onUpdate:() => {
                 
@@ -162,6 +162,5 @@ const VideoCarousel = () => {
     </div>
     </>
   )
-
-    }
+    
 export default VideoCarousel
