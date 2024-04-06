@@ -3,17 +3,13 @@ import React from 'react'
 import gsap from "gsap";
 const Model = () => {
 
+    const [size, setSize] = useState('small');
+
     useGSAP(() => {
         gsap.to('#heading', { 
             y: 0, opacity: 1
         })
     }, [])
-
-
-
-
-
-
 
 
   return (
