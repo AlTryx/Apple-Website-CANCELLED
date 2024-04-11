@@ -11,7 +11,7 @@ const Model = () => {
      color: ['8F8A81', '#FFE7B9','#6F6C64'],
     img: yellowImg})
 
-        // camera control for the model 
+        // camera control for the model view
 
     useGSAP(() => {
         gsap.to('#heading', { 
