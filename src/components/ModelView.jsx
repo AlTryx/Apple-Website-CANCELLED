@@ -15,9 +15,13 @@ const ModelView = ({index, groupRef, gsapType, controlRef, setRotationSize, size
         <PerspectiveCamera makeDefault position = {[0,0,4]}/>
         <Lights />
 
+        <OrbitControls />
+
+        <group>
         <Suspense fallback = {<div>Loading</div>}> // dokato zaredim odela kakvo da pokazva
         <IPhone />
         </Suspense>
+        </group>
     </View>
   )
 }
