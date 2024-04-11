@@ -2,7 +2,7 @@ import React from 'react'
 import {PerspectiveCamera, View} from "@react-three/drei"
 import Lights from './Lights';
 import IPhone from './IPhone';
-
+import * as THREE from 'three'
 const ModelView = ({index, groupRef, gsapType, controlRef, setRotationSize, size, item}) => {
   return (
     <View
@@ -15,9 +15,16 @@ const ModelView = ({index, groupRef, gsapType, controlRef, setRotationSize, size
         <PerspectiveCamera makeDefault position = {[0,0,4]}/>
         <Lights />
 
-        <OrbitControls />
+        <OrbitControls 
+        makeDefault
+        ref = {controlRef}
+        enableZoom = {false}
+        enablePan= {false}
+        rotateSpeed = {0.4}
+        target = {new THREE.Vector3(0, 0, 0)}
+        />
 
-        <group>
+        <group ref = {groupRef} name = {`${index ===1} ? 'small' : 'large'`} position = {[0, 0, 0]}>
         <Suspense fallback = {<div>Loading</div>}> // dokato zaredim odela kakvo da pokazva
         <IPhone />
         </Suspense>
