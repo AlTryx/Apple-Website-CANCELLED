@@ -29,6 +29,8 @@ const ModelView = ({index, groupRef, gsapType, controlRef, setRotationSize, size
         <Suspense fallback = {<div>Loading</div>}> // dokato zaredim odela kakvo da pokazva
         <IPhone 
           scale={index === 1 ? [15, 15, 15] : [17, 17, 17]}
+          item = {item}
+          size = {size}
         />
         </Suspense>
         </group>
