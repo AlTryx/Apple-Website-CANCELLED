@@ -27,7 +27,9 @@ const ModelView = ({index, groupRef, gsapType, controlRef, setRotationSize, size
 
         <group ref = {groupRef} name = {`${index ===1} ? 'small' : 'large'`} position = {[0, 0, 0]}>
         <Suspense fallback = {<div>Loading</div>}> // dokato zaredim odela kakvo da pokazva
-        <IPhone />
+        <IPhone 
+        
+        />
         </Suspense>
         </group>
     </View>
