@@ -1,10 +1,11 @@
 import { useGSAP } from '@gsap/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import gsap from "gsap";
 import { useState } from 'react';
 import { yellowImg } from "../utils";
 import {sizes} from "../constants/index"
 import * as THREE from 'three'
+import { animateWithGsapTimeline } from '../utils/animations';
 
 const Model = () => {
 
@@ -30,10 +31,16 @@ const Model = () => {
         const tl = gsap.timeline();
         useEffect(()=> {
             if(size === 'large'){
-
+                animateWithGsapTimeline(tl, small, smallRotation, '#view1', '#view2', {
+                    transform: 'translateX(-100%)',
+                    duration: 2
+                })
             }
             if (size === 'small') {
-                
+                animateWithGsapTimeline(tl, large, largeRotation, '#view2', '#view1', {
+                    transform: 'translateX(0)',
+                    duration: 2
+                })
             }
         }, [size]
     )

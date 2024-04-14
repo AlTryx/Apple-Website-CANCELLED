@@ -6,11 +6,14 @@ import * as THREE from 'three'
 import Loader from './Loader';
 const ModelView = ({index, groupRef, gsapType, controlRef, setRotationState, size, item}) => {
   return (
+
     <View
       index = {index}
       id = {gsapType}
-      className = {`border-2 border-red-500 w-full h-full ${index ===2} ? 'right-[-100%] : '' `}
-      >
+      className = {`border-2 border-red-500 w-full h-full absolute ${index ===2 ? 'right-[-100%]' : ''}  `}
+    >
+
+
         {/*Ambient Light*/}
         <ambientLight intensity = {0.3} />
         <PerspectiveCamera makeDefault position = {[0,0,4]}/>
