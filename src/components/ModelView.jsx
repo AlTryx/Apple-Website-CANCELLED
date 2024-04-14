@@ -3,6 +3,7 @@ import {PerspectiveCamera, View} from "@react-three/drei"
 import Lights from './Lights';
 import IPhone from './IPhone';
 import * as THREE from 'three'
+import Loader from './Loader';
 const ModelView = ({index, groupRef, gsapType, controlRef, setRotationSize, size, item}) => {
   return (
     <View
